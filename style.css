@@ -1,0 +1,118 @@
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	outline: none;
+	border: none;
+	font-family: 'arial', sans-serif;
+	box-sizing: border-box;
+}
+
+:root {
+	--fc-white: #F2F2F2FF;
+	--fc-black: #040404FF;
+}
+
+body {
+	flex-direction: column;
+	width: 100%;
+	min-height: 100vh;
+	font-size: 16px;
+	background-color: var(--fc-black);
+}
+
+body, h1, h2 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	grid-gap: 2em;
+}
+
+h1, h2 {
+	padding: 0 auto;
+	max-width: 80vw;
+	color: var(--fc-white);
+	text-align: center;
+}
+
+h1 {
+	font-size: 2.8em;
+	font-weight: 900;
+}
+
+h2 {
+	font-size: 2em;
+}
+
+div {
+	padding: 0.8em 1.4em;
+	display: grid;
+	grid-gap: 1.4em 0;
+	grid-template-columns: 2.4fr 0.6fr 2.4fr;
+	grid-template-rows: repeat(3, 1fr);
+}
+
+div button {
+	padding: 0.6em 0.8em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: var(--fc-black);
+	font-size: 1.2em;
+	background: var(--fc-white);
+	border-radius: 4px;
+}
+
+div button:not(:last-child) span {
+	padding-left: 0.2em;
+}
+
+div button:nth-child(1) {
+	grid-column: 1;
+	grid-row: 1;
+}
+
+div button:nth-child(2) {
+	grid-column: 1;
+	grid-row: 2;
+}
+
+div button:nth-child(3) {
+	grid-column: 3;
+	grid-row: 1;
+}
+
+div button:nth-child(4) {
+	grid-column: 3;
+	grid-row: 2;
+}
+
+div button:nth-child(5) {
+	grid-column: 2;
+	grid-row: 3;
+	background: transparent;
+}
+
+div button#push {
+	transform: scale(2.6);
+	transition: all 0.2s ease;
+}
+
+div button#push:active {
+	transform: scale(3.2);
+}
+
+.switch-theme body {
+  background-color: var(--fc-white);
+}
+
+.switch-theme h1,
+.switch-theme h2 {
+  color: var(--fc-black);
+}
+
+.switch-theme div button:not(div button:last-child) {
+  color: var(--fc-white);
+  background-color: var(--fc-black);
+}
